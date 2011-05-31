@@ -13,7 +13,6 @@ import com.google.web.bindery.event.shared.EventBus;
 public class TimeModel{
 	private final EventBus eventBus;
 	
-	private static final int workStartMinute = 0;
 	private static final int breakStartMinute = 45;
 	
 	private boolean wasWorking = isWorking();
@@ -28,7 +27,6 @@ public class TimeModel{
 				return true;
 			}
 		}, 1*1000);
-		
 	}
 	
 	private void updateStatus(){
@@ -54,7 +52,7 @@ public class TimeModel{
 		if(isWorking()){
 			minutesLeft = breakStartMinute - getMinutes() - 1;
 		}else{
-			minutesLeft = workStartMinute - getMinutes() - 1;
+			minutesLeft = 60 - getMinutes() - 1;
 		}
 		secondsLeft = 60 - getSeconds();
 		if(secondsLeft==60){
@@ -65,6 +63,6 @@ public class TimeModel{
 	}
 	
 	public static boolean isWorking(){
-		return workStartMinute<=getMinutes() && getMinutes()<breakStartMinute;
+		return 0<=getMinutes() && getMinutes()<breakStartMinute;
 	}
 }
