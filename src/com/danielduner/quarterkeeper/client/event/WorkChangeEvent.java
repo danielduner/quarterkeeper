@@ -19,7 +19,7 @@ public class WorkChangeEvent extends Event<WorkChangeEventHandler>{
 
 	@Override
 	protected void dispatch(WorkChangeEventHandler handler) {
-		handler.onTimeEvent(this);
+		handler.onWorkChangeEvent(this);
 	}
 
 	public static HandlerRegistration register(EventBus eventBus, WorkChangeEventHandler eventHandler){

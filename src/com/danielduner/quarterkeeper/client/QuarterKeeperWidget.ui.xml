@@ -1,44 +1,49 @@
 <!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+
+	<ui:style type='com.danielduner.quarterkeeper.client.QuarterKeeperWidget.BackgroundStyle'>
+		.all{
+			padding: 20px;
+			text-align: center;
+			font-size: large;
+			font-family: sans-serif; 
+		}
 	
-	<ui:style>
-      .bordery { border: none/*1px solid black*/; }
-    </ui:style>
-	
-	<g:DockLayoutPanel unit='EM' addStyleNames='{style.bordery}'>
-	
+		.northRed 	{background-color: hsl(10, 50%, 50%);}
+		.centerRed 	{background-color: hsl(20, 50%, 50%);}
+		.southRed 	{background-color: hsl(30, 50%, 50%);}
+		.westRed	{background-color: hsl(40, 50%, 50%);}
+		.eastRed	{background-color: hsl(50, 50%, 50%);}
+
+		.northGreen		{background-color: hsl(70, 50%, 50%);}
+		.centerGreen 	{background-color: hsl(80, 50%, 50%);}
+		.southGreen 	{background-color: hsl(90, 50%, 50%);}
+		.westGreen		{background-color: hsl(110, 50%, 50%);}
+		.eastGreen		{background-color: hsl(120, 50%, 50%);}
+	</ui:style>
+
+	<g:DockLayoutPanel unit='EM'>
+
 		<g:north size='5'>
-			<g:Label  addStyleNames='{style.bordery}'>Top</g:Label>
+			<g:Label ui:field='northLabel' addStyleNames='{style.all} {style.northRed}'>Quarter Keeper</g:Label>
 		</g:north>
-		
+
 		<g:center>
-			<g:Label addStyleNames='{style.bordery}'>Body</g:Label>
+			<g:Label ui:field='centerLabel' addStyleNames='{style.all} {style.centerRed}'>Body</g:Label>
 		</g:center>
-		
+
 		<g:south size='10'>
-			<g:Label addStyleNames='{style.bordery}'>footer</g:Label>
+			<g:Label ui:field='southLabel' addStyleNames='{style.all} {style.southRed}'>footer</g:Label>
 		</g:south>
-		
+
 		<g:west size='10'>
-			<g:HTML addStyleNames='{style.bordery}'>
-				<ul>
-					<li>Sidebar</li>
-					<li>Sidebar</li>
-					<li>Sidebar</li>
-				</ul>
-			</g:HTML>
+			<g:Label ui:field='westLabel' addStyleNames='{style.all} {style.westRed}'>~</g:Label>
 		</g:west>
-		
+
 		<g:east size='10'>
-			<g:HTML addStyleNames='{style.bordery}'>
-				<ul>
-					<li>Sidebar</li>
-					<li>Sidebar</li>
-					<li>Sidebar</li>
-				</ul>
-			</g:HTML>
+			<g:Label ui:field='eastLabel' addStyleNames='{style.all} {style.eastRed}'>~</g:Label>
 		</g:east>
-		
+
 	</g:DockLayoutPanel>
 </ui:UiBinder> 

@@ -4,9 +4,9 @@ import com.google.gwt.event.shared.EventHandler;
 import com.google.gwt.event.shared.HandlerRegistration;
 
 public interface WorkChangeEventHandler extends EventHandler {
-	public void onTimeEvent(WorkChangeEvent event);
+	public void onWorkChangeEvent(WorkChangeEvent event);
 }
 
-interface HasTimeEvents{
-	public HandlerRegistration addTimeHandler(WorkChangeEventHandler handler);
+interface HasWorkEvents{
+	public HandlerRegistration addWorkHandler(WorkChangeEventHandler handler);
 }
