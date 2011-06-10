@@ -1,6 +1,5 @@
 package com.danielduner.quarterkeeper.client;
 
-
 import com.danielduner.quarterkeeper.client.ginjection.QuarterGinjector;
 import com.danielduner.quarterkeeper.client.presenter.Presenter;
 import com.google.gwt.event.logical.shared.ValueChangeEvent;
