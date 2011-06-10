@@ -7,10 +7,7 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
 public class TimeChangeEvent extends Event<TimeChangeEventHandler>{
 	public static final Type<TimeChangeEventHandler> TYPE = new Type<TimeChangeEventHandler>();
 
-	private String timeLeft;
-	
-	public TimeChangeEvent(String timeLeft) {
-		this.timeLeft = timeLeft;
+	public TimeChangeEvent() {
 	}
 	
 	@Override
@@ -25,9 +22,5 @@ public class TimeChangeEvent extends Event<TimeChangeEventHandler>{
 
 	public static HandlerRegistration register(EventBus eventBus, TimeChangeEventHandler eventHandler){
 		return eventBus.addHandler(TYPE, eventHandler);
-	}
-	
-	public String getTimeLeft(){
-		return timeLeft;
 	}
 }

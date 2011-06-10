@@ -6,10 +6,8 @@ import com.google.web.bindery.event.shared.HandlerRegistration;
 
 public class WorkChangeEvent extends Event<WorkChangeEventHandler>{
 	public static final Type<WorkChangeEventHandler> TYPE = new Type<WorkChangeEventHandler>();
-	private final boolean working;
 	
-	public WorkChangeEvent(boolean working) {
-		this.working = working;
+	public WorkChangeEvent() {
 	}
 	
 	@Override
@@ -24,9 +22,5 @@ public class WorkChangeEvent extends Event<WorkChangeEventHandler>{
 
 	public static HandlerRegistration register(EventBus eventBus, WorkChangeEventHandler eventHandler){
 		return eventBus.addHandler(TYPE, eventHandler);
-	}
-	
-	public boolean startWorking(){
-		return working;
 	}
 }
