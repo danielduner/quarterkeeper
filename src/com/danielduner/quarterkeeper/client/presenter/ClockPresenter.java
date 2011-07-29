@@ -5,26 +5,19 @@ import com.danielduner.quarterkeeper.client.event.TimeChangeEventHandler;
 import com.danielduner.quarterkeeper.client.event.WorkChangeEvent;
 import com.danielduner.quarterkeeper.client.event.WorkChangeEventHandler;
 import com.danielduner.quarterkeeper.client.model.TimeModel;
+import com.danielduner.quarterkeeper.client.view.ClockView;
 import com.google.gwt.user.client.ui.HasWidgets;
-import com.google.gwt.user.client.ui.Widget;
 import com.google.inject.Inject;
 import com.google.web.bindery.event.shared.EventBus;
 
-public class ClockPresenter implements Presenter, TimeChangeEventHandler, WorkChangeEventHandler{
+public class ClockPresenter implements Presenter, ClockView.Presenter, TimeChangeEventHandler, WorkChangeEventHandler{
 	
 	private final EventBus eventBus;
 	private final TimeModel model;
-	private final ClockDisplay view;
-	
-	public interface ClockDisplay {
-		void startWork();
-		void startBreak();
-		void setClock(String time);
-		Widget asWidget();
-	}
+	private final ClockView view;
 	
 	@Inject
-	protected ClockPresenter(EventBus eventBus, TimeModel model, ClockDisplay view) {
+	protected ClockPresenter(EventBus eventBus, TimeModel model, ClockView view) {
 		this.eventBus = eventBus;
 		this.model = model;
 		this.view = view;

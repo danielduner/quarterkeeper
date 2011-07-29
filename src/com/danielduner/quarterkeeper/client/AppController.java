@@ -7,17 +7,14 @@ import com.google.gwt.event.logical.shared.ValueChangeHandler;
 import com.google.gwt.user.client.History;
 import com.google.gwt.user.client.ui.HasWidgets;
 import com.google.inject.Inject;
-import com.google.web.bindery.event.shared.EventBus;
 
 public class AppController implements Presenter, ValueChangeHandler<String>{
-	private final EventBus eventBus;
 	private final QuarterGinjector ginjector;
 	
 	private HasWidgets container;
 	
 	@Inject
-	protected AppController(EventBus eventBus, QuarterGinjector ginjector) {
-		this.eventBus = eventBus;
+	protected AppController(QuarterGinjector ginjector) {
 		this.ginjector = ginjector;
 		bind();
 	}
